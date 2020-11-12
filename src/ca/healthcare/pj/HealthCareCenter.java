@@ -18,6 +18,11 @@ public class HealthCareCenter {
 		return null;
 	}
 	
+	public static <T> void printUser(ArrayList<T> users){
+		for(T user : users) {
+			System.out.println(user);
+		}
+	}
 	public static void main(String[] args) {
 		//In the driver class, create the ArrayList of User and add all the patient and doctor objects to this arrayList. 
 		ArrayList<User> users = new ArrayList<User>();
@@ -65,9 +70,7 @@ public class HealthCareCenter {
 		//Then Class sort in users ArrayList to sort the users by last name and print the users.
 		Collections.sort(users, new UserSorter.CompareByLastName());
 		System.out.println("Printing Users after sorting");
-		for(User s : users) {
-			System.out.println(s);
-		}
+		printUser(users);
 		System.out.println("\n");
 		//Then Ask for id . 
 		Scanner input = new Scanner(System.in); //Scanner class cleate
